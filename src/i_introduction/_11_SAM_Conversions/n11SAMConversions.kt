@@ -7,7 +7,8 @@ import java.util.*
 fun todoTask11(): Nothing = TODO(
     """
         Task 11.
-        When an object implements a SAM interface (one with a Single Abstract Method), you can pass a lambda instead.
+        When an object implements a SAM interface (one with a Single Abstract Method),
+        you can pass a lambda instead.
         Rewrite the previous example changing an object expression to a lambda.
     """,
     documentation = doc11()
@@ -15,6 +16,8 @@ fun todoTask11(): Nothing = TODO(
 
 fun task11(): List<Int> {
     val arrayList = arrayListOf(1, 5, 2)
-    Collections.sort(arrayList, { x, y -> todoTask11() })
+
+    // Ah, okay, this is what I did in 10
+    Collections.sort(arrayList, { x, y -> y - x })
     return arrayList
 }

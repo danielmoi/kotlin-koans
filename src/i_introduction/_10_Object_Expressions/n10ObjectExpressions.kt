@@ -23,8 +23,10 @@ fun todoTask10(): Nothing = TODO(
 fun task10(): List<Int> {
     val arrayList = arrayListOf(1, 5, 2)
     // copied this
-    // not sure what "override fun compare(...)" means
     // then got error: "Convert to lambda"
+
+    // not sure what "override fun compare(...)" means
+    // is this creating an object with a method "compare"?
     Collections.sort(arrayList, object : Comparator<Int> {
         override fun compare(x: Int, y: Int) = y - x
     })
