@@ -8,7 +8,8 @@ import java.util.*
  */
 
 /*
- *  There are many operations that help to transform one collection into another, starting with 'to'
+ *  There are many operations that help to transform one collection into another,
+ *  starting with 'to'
  */
 fun example0(list: List<Int>) {
     list.toSet()
@@ -18,7 +19,7 @@ fun example0(list: List<Int>) {
 
 fun Shop.getSetOfCustomers(): Set<Customer> {
     // Return a set containing all the customers of this shop
-    todoCollectionTask()
-//    return this.customers
+//    todoCollectionTask()
+    return this.customers.toSet()
 }
 
