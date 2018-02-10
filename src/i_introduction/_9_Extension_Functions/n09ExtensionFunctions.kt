@@ -29,7 +29,32 @@ fun todoTask9(): Nothing = TODO(
 
 data class RationalNumber(val numerator: Int, val denominator: Int)
 
-fun Int.r(): RationalNumber = todoTask9()
-fun Pair<Int, Int>.r(): RationalNumber = todoTask9()
+
+// we are adding an extension function "r" onto the class "Int"
+/*
+My initial solution:
+fun Int.r(n: Int, d: Int): RationalNumber = RationalNumber(n,d)
+fun Pair<Int, Int>.r(n: Int, d: Int): RationalNumber = RationalNumber(n,d)
+
+Error:
+Error:(28,24) Kotlin: No value passed for parameter 'n'
+Error:(28,24) Kotlin: No value passed for parameter 'd'
+
+
+ */
+
+
+
+// Looking at the tests, we can see that .r() has no arguments passed in
+// so, we have to use "this"
+fun Int.r(): RationalNumber = RationalNumber(this, 1)
+
+/*
+fun Pair<Int, Int>.r(): RationalNumber = RationalNumber(this, this)
+
+Then I tried default completion!! CTRL+SPACE, and it showed this.first?!!!!!
+ */
+// we are adding an extension function "r" onto the class "Pair"
+fun Pair<Int, Int>.r(): RationalNumber = RationalNumber(this.first, this.second)
 
 
