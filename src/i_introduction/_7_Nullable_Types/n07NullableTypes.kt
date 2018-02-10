@@ -5,10 +5,16 @@ import util.doc7
 
 fun test() {
     val s: String = "this variable cannot store null references"
+
+    // this variable can store null references
     val q: String? = null
 
     if (q != null) q.length      // you have to check to dereference
+
+    // create variable "i"
     val i: Int? = q?.length      // null
+
+    // create variable "j"
     val j: Int = q?.length ?: 0  // 0
 }
 
@@ -25,7 +31,17 @@ fun todoTask7(client: Client?, message: String?, mailer: Mailer): Nothing = TODO
 fun sendMessageToClient(
         client: Client?, message: String?, mailer: Mailer
 ) {
-    todoTask7(client, message, mailer)
+//    todoTask7(client, message, mailer)
+
+    // JavaCode7.sendMessageToClient calls mailer.sendMessage, with an EMAIL and MESSAGE
+    // we need to source those 2 variables somehow
+    // "message" comes directly from the "message" argument
+    // "email" is derived from the "client" argument
+    var email = client?.personalInfo?.email
+
+    if (email != null && message !== null) {
+        mailer.sendMessage(email, message)
+    }
 }
 
 class Client (val personalInfo: PersonalInfo?)

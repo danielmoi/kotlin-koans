@@ -2,6 +2,9 @@ package i_introduction._0_Hello_World
 // namespace for this file
 // regardless of file location, being in the same PACKAGE, you have access to all global variables
 
+
+// the TEST for this has the same "package" line, so it can access "task0"
+
 import util.TODO
 import util.doc0
 
