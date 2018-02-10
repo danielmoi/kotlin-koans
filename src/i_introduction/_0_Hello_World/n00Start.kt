@@ -1,8 +1,15 @@
 package i_introduction._0_Hello_World
+// namespace for this file
+// regardless of file location, being in the same PACKAGE, you have access to all global variables
 
 import util.TODO
 import util.doc0
 
+// const doc0 = require('util.doc0')
+
+// function declaration
+// args: none (takes 0 args)
+// return: nothing (returns nothing)
 fun todoTask0(): Nothing = TODO(
     """
         Task 0.
@@ -19,11 +26,22 @@ fun todoTask0(): Nothing = TODO(
         Using 'references =' you can navigate to the code mentioned in the task description.
 
         Let's start! Make the function 'task0' return "OK". Note that you can return expression directly.
+
+
     """,
     documentation = doc0(),
     references = { task0(); "OK" }
 )
 
+// inside a BLOCK scope function, you always have to use the "return" keyword
+// in a LAMBDA it will automatically return the last expression
 fun task0(): String {
-    return todoTask0()
+//    return todoTask0()
+    return "OK"
 }
+
+/*
+we can also write:
+
+fun task0() = "OK"
+ */

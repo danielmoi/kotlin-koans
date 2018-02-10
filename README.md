@@ -29,7 +29,6 @@ $ ./gradlew test --tests ii_*         # run tests in part 2
 $ ./gradlew test --tests ii_*22*      # run test number 22 in part 2
 ```
 
-
 #### How to check yourself
 
 The repository has two branches, `master` which contains the exercises for you to do and `resolutions` which contains the resolved exercises. 
