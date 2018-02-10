@@ -37,7 +37,7 @@ fun sendMessageToClient(
     // we need to source those 2 variables somehow
     // "message" comes directly from the "message" argument
     // "email" is derived from the "client" argument
-    var email = client?.personalInfo?.email
+    val email = client?.personalInfo?.email
 
     if (email != null && message !== null) {
         mailer.sendMessage(email, message)

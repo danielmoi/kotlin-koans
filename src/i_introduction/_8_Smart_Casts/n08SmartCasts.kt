@@ -6,13 +6,18 @@ import util.doc8
 // 'sealed' modifier restricts the type hierarchy:
 // all the subclasses must be declared in the same file
 sealed class Expr
+
+// an instance of Num has the property "value"
 class Num(val value: Int) : Expr()
+
+// an instance of Sum has the properties "left" and "right
 class Sum(val left: Expr, val right: Expr) : Expr()
 
+// our recursive function
 fun eval(e: Expr): Int =
         when (e) {
-            is Num -> todoTask8(e)
-            is Sum -> todoTask8(e)
+            is Num -> e.value
+            is Sum -> eval(e.left) + eval(e.right)
         }
 
 fun todoTask8(expr: Expr): Nothing = TODO(
