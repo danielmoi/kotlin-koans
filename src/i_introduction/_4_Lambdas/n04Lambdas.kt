@@ -22,4 +22,13 @@ fun todoTask4(collection: Collection<Int>): Nothing = TODO(
     documentation = doc4(),
     references = { JavaCode4().task4(collection) })
 
-fun task4(collection: Collection<Int>): Boolean = todoTask4(collection)
+/*
+My solution:
+
+fun task4(collection: Collection<Int>): Boolean = collection.any({ c -> c % 2 == 0 })
+ */
+
+// we can remove the parentheses:
+fun task4(collection: Collection<Int>): Boolean = collection.any { c -> c % 2 == 0 }
+
+
