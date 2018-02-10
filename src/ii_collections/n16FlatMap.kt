@@ -12,6 +12,8 @@ val Customer.orderedProducts: Set<Product> get() {
     // Return all products this customer has ordered
 
     // we can't do this.orders.products, because it is ".products" for EACH order
+
+    // Q: Why do we need to use "flatMap" here?
     val x = this.orders.flatMap { it.products }.toSet()
     println(x)
     return x
