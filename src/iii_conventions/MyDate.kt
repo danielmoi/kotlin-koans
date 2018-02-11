@@ -19,4 +19,25 @@ enum class TimeInterval {
     YEAR
 }
 
-class DateRange(val start: MyDate, val endInclusive: MyDate)
+
+// SOLUTION 1 - implement 'ClosedRange' interface
+
+// We are using the "compareTo" method on the "MyDate" class above
+// "start" hides member of supertype "ClosedRange" and needs "override" modifier
+// we are using the "contains" method on ClosedRange
+// this is called making OUR class "DateRage" IMPLEMENT the "ClosedRange" INTEFACE
+// from the standard library
+class DateRange1(override val start: MyDate, override val endInclusive: MyDate): ClosedRange<MyDate>
+
+
+
+// SOLUTION 2 – add our own "contains" method
+
+// We are using the "compareTo" method on the "MyDate" class above
+// "start" hides member of supertype "ClosedRange" and needs "override" modifier
+class DateRange(val start: MyDate, val endInclusive: MyDate) {
+    // this was the error I got:
+    // "operator" modifier is required on "contains"
+    operator fun contains(d: MyDate): Boolean = start <= d && d <= endInclusive
+
+}
