@@ -9,12 +9,16 @@ fun todoTask27(): Nothing = TODO(
         Uncomment the commented code and make it compile.
         Make all the changes to the file MyDate.kt.
 
-        Tips: To make '..' work implement a 'MyDate.rangeTo()' extension function returning 'DateRange'.
+        Tips: To make '..' work implement a 'MyDate.rangeTo()' extension
+        function returning 'DateRange'.
     """,
     documentation = doc26()
 )
 
 fun checkInRange2(date: MyDate, first: MyDate, last: MyDate): Boolean {
-    todoTask27()
-//    return date in first..last
+    // Q: I don't think "first..last" actually creates a range
+    // We are just using the ".contains" method
+
+    // However, DateRange1 DOES create a range (a ClosedRange)
+    return date in first..last
 }

@@ -10,8 +10,18 @@ data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int) : Comparab
     }
 
 }
+/*
+This is incorrect syntax:
 
-operator fun MyDate.rangeTo(other: MyDate): DateRange = todoTask27()
+                                                     Remove this
+                                                      |
+operator fun MyDate.rangeTo(other: MyDate): DateRange = {
+    return DateRange(this, other)
+}
+ */
+operator fun MyDate.rangeTo(other: MyDate): DateRange {
+    return DateRange(this, other)
+}
 
 enum class TimeInterval {
     DAY,
