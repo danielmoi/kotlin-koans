@@ -34,5 +34,6 @@ fun Shop.getSetOfProductsOrderedByEveryCustomer(): Set<Product> {
 
             // gotta use ".intersect"...
             orderedByAll.intersect(customer.orderedProducts)
+        
     })
 }
