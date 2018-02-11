@@ -22,4 +22,3 @@ fun Shop.getSetOfCustomers(): Set<Customer> {
 //    todoCollectionTask()
     return this.customers.toSet()
 }
-
