@@ -29,6 +29,9 @@ fun task4(collection: Collection<Int>): Boolean = collection.any({ c -> c % 2 ==
  */
 
 // we can remove the parentheses:
-fun task4(collection: Collection<Int>): Boolean = collection.any { c -> c % 2 == 0 }
+
+//fun task4(collection: Collection<Int>): Boolean = collection.any { c -> c % 2 == 0 }
+
+fun task4(collection: Collection<Int>): Boolean = collection.any { it % 2 == 0 }
 
 
